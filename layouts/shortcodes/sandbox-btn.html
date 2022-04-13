@@ -1,0 +1,9 @@
+{{ $csUrl := .Site.Params.cloudShell.url }}
+{{ $csImage := .Site.Params.cloudShell.image }}
+{{ $stacksGitRepo := .Site.Params.stacksGitRepo }}
+{{ $url := printf "%s?cloudshell_image=%s&cloudshell_git_repo=%s" $csUrl $csImage $stacksGitRepo }}
+{{ $tutorial := .Get "tutorial_file" }}
+
+<a href="{{ printf `%s&cloudshell_tutorial=%s` $url $tutorial }}" target="_blank" rel="noopener" class="book-btn">
+    Deploy with CloudShell
+</a>

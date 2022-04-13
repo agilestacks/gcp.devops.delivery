@@ -1,0 +1,43 @@
+baseURL: http://google.devops.delivery/
+languageCode: en-us
+title: GCP Support Sandboxes
+
+# https://themes.gohugo.io/themes/hugo-book/
+theme: hugo-book
+
+menu:
+  after:
+    - name: "Github"
+      url: "https://github.com/agilestacks/google-stacks"
+      weight: 20
+
+params:
+  BookSection: "*"
+  BookToC: false
+  # BookMenuBundle: "/menu"
+
+  cloudShell:
+    url: https://ssh.cloud.google.com/cloudshell/editor
+    image: gcr.io/superhub/cloud-shell
+
+  stacksGitRepo: https://github.com/agilestacks/google-stacks
+
+  sandboxes:
+    - title: GKE cluster with Demo application
+      btn: Deploy GKE + Demo App
+      tutorial: hub-gke-with-demo-app.md
+    - title: GKE cluster with Anthos Service Mesh and Demo application
+      btn: Deploy GKE + ASM + Demo App
+      tutorial: hub-anthos-with-demo-app.md
+    - title: Just GKE cluster
+      btn: Deploy empty GKE cluster
+      tutorial: hub-just-gke.md
+    - title: Web Server VM with SQL Server
+      btn: Deploy Web Server VM + Cloud SQL
+      tutorial: hub-php-web-server.md
+    - title: Cloud SQL instance with k6.io load test
+      btn: Deploy Cloud SQL + Load Test
+      tutorial: hub-cloud-sql-perftest.md
+    - title: Cloud Composer with a sample ETL pipeline to move data from Cloud Storage to BigQuery
+      btn: Deploy Composer + BigQuery
+      tutorial: hub-composer-demo-app.md

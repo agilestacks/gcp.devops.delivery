@@ -1,0 +1,15 @@
+{{ $csUrl := .Site.Params.cloudShell.url }}
+{{ $csImage := .Site.Params.cloudShell.image }}
+{{ $stacksGitRepo := .Site.Params.stacksGitRepo }}
+{{ $url := printf "%s?cloudshell_image=%s&cloudshell_git_repo=%s" $csUrl $csImage $stacksGitRepo }}
+
+{{ $sandboxes := .Site.Params.sandboxes }}
+
+{{ range $_, $sandbox := $sandboxes }}
+<div style="margin-bottom: 10px;">
+    <h5>{{ $sandbox.title }}</h5>
+    <a href="{{ printf `%s&cloudshell_tutorial=%s` $url $sandbox.tutorial }}" target="_blank" rel="noopener" class="book-btn">
+        {{ $sandbox.btn }}
+    </a>
+</div>
+{{ end }}

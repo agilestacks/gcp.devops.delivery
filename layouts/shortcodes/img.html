@@ -1,0 +1,10 @@
+<figure style="padding: 0.25rem; margin: 2rem 0;">
+  <img src="{{ with .Get 0}}{{.}}{{end}}" width="{{ with .Get 1}}{{.}}{{end}}" height="{{ with .Get 2}}{{.}}{{end}}">
+  <figcaption>
+  <small>
+    {{ with .Inner }}
+      {{ . }}
+    {{ end }}
+  </small>
+  </figcaption>
+</figure>
