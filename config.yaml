@@ -20,24 +20,26 @@ params:
     url: https://ssh.cloud.google.com/cloudshell/editor
     image: gcr.io/superhub/cloud-shell
 
-  stacksGitRepo: https://github.com/agilestacks/google-stacks
+  sandboxesGit:
+    url: https://github.com/agilestacks/google-stacks
+    branch: main
 
   sandboxes:
     - title: GKE cluster with Demo application
       btn: Deploy GKE + Demo App
-      tutorial: hub-gke-with-demo-app.md
+      name: hub-gke-with-demo-app
     - title: GKE cluster with Anthos Service Mesh and Demo application
       btn: Deploy GKE + ASM + Demo App
-      tutorial: hub-anthos-with-demo-app.md
+      name: hub-anthos-with-demo-app
     - title: Just GKE cluster
       btn: Deploy empty GKE cluster
-      tutorial: hub-just-gke.md
+      name: hub-just-gke
     - title: Web Server VM with SQL Server
       btn: Deploy Web Server VM + Cloud SQL
-      tutorial: hub-php-web-server.md
+      name: hub-php-web-server
     - title: Cloud SQL instance with k6.io load test
       btn: Deploy Cloud SQL + Load Test
-      tutorial: hub-cloud-sql-perftest.md
+      name: hub-cloud-sql-perftest
     - title: Cloud Composer with a sample ETL pipeline to move data from Cloud Storage to BigQuery
       btn: Deploy Composer + BigQuery
-      tutorial: hub-composer-demo-app.md
+      name: hub-composer-demo-app

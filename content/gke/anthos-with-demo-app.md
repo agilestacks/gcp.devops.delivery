@@ -4,7 +4,7 @@ weight: 30
 ---
 # GKE Sandbox
 
-{{< sandbox-btn tutorial="hub-anthos-with-demo-app.md" >}}
+{{< sandbox-btn sandboxName="hub-anthos-with-demo-app" >}}
 
 ## Description
 
@@ -27,7 +27,7 @@ Click `Start` to go through the installation instructions.
 
 * You must be logged into your GCP account.
 
-* Open the Google `cloudshell` using the following [link](https://ssh.cloud.google.com/cloudshell/editor?cloudshell_git_repo=https://github.com/agilestacks/google-stacks&cloudshell_image=gcr.io/superhub/cloud-shell&cloudshell_tutorial=hub-anthos-with-demo-app.md) (if not already opened):
+* Open the Google `cloudshell` using the following [link](https://ssh.cloud.google.com/cloudshell/editor?cloudshell_git_repo=https://github.com/agilestacks/google-stacks&&cloudshell_git_branch=main&cloudshell_image=gcr.io/superhub/cloud-shell&cloudshell_tutorial=hub-anthos-with-demo-app.md&cloudshell_open_in_editor=hub-anthos-with-demo-app.yaml) (if not already opened):
 
 *NOTE: The next steps must be executed from within the `cloudshell`*
 

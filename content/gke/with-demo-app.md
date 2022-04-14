@@ -4,7 +4,7 @@ weight: 20
 ---
 # GKE Sandbox
 
-{{< sandbox-btn tutorial="hub-gke-with-demo-app.md" >}}
+{{< sandbox-btn sandboxName="hub-gke-with-demo-app" >}}
 
 ## Description
 
@@ -25,7 +25,7 @@ Click `Start` to go through the sandbox installation instructions.
 
 * You must be logged into your GCP account.
 
-* Open the Google `cloudshell` using the following [`link`](https://ssh.cloud.google.com/cloudshell/editor?cloudshell_git_repo=https://github.com/agilestacks/google-stacks&cloudshell_image=gcr.io/superhub/cloud-shell&cloudshell_tutorial=hub-gke-with-demo-app.md)
+* Open the Google `cloudshell` using the following [`link`](https://ssh.cloud.google.com/cloudshell/editor?cloudshell_git_repo=https://github.com/agilestacks/google-stacks&&cloudshell_git_branch=main&cloudshell_image=gcr.io/superhub/cloud-shell&cloudshell_tutorial=hub-gke-with-demo-app.md&cloudshell_open_in_editor=hub-gke-with-demo-app.yaml)
 
 *NOTE: The next steps must be executed from within the `cloudshell`*
 

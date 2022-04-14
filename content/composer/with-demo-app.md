@@ -4,7 +4,7 @@ weight: 10
 ---
 # Cloud Composer
 
-{{< sandbox-btn tutorial="hub-composer-demo-app.md" >}}
+{{< sandbox-btn sandboxName="hub-composer-demo-app" >}}
 
 This sandbox will deploy a [Cloud Composer](https://cloud.google.com/composer)
 

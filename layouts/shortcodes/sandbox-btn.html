@@ -1,9 +1,14 @@
-{{ $csUrl := .Site.Params.cloudShell.url }}
-{{ $csImage := .Site.Params.cloudShell.image }}
-{{ $stacksGitRepo := .Site.Params.stacksGitRepo }}
-{{ $url := printf "%s?cloudshell_image=%s&cloudshell_git_repo=%s" $csUrl $csImage $stacksGitRepo }}
-{{ $tutorial := .Get "tutorial_file" }}
+{{ $sandboxName := .Get "sandboxName" }}
+{{ $sandboxesGitUrl := .Site.Params.sandboxesGit.url }}
+{{ $sandboxesGitBranch := .Site.Params.sandboxesGit.branch }}
+{{ $image := .Site.Params.cloudShell.image }}
+{{ $url := .Site.Params.cloudShell.url }}
+{{ $url := printf "%s?cloudshell_git_repo=%s&" $url $sandboxesGitUrl }}
+{{ $url := printf "%s&cloudshell_git_branch=%s" $url $sandboxesGitBranch }}
+{{ $url := printf "%s&cloudshell_image=%s" $url $image }}
+{{ $url := printf "%s&cloudshell_tutorial=%s.md" $url $sandboxName }}
+{{ $url := printf "%s&cloudshell_open_in_editor=%s.yaml" $url $sandboxName }}
 
-<a href="{{ printf `%s&cloudshell_tutorial=%s` $url $tutorial }}" target="_blank" rel="noopener" class="book-btn">
+<a href="{{ $url }}" target="_blank" rel="noopener" class="book-btn">
     Deploy with CloudShell
 </a>
