@@ -27,19 +27,19 @@ params:
   sandboxes:
     - title: GKE cluster with Demo application
       btn: Deploy GKE + Demo App
-      name: hub-gke-with-demo-app
+      name: gke-with-demo-app
     - title: GKE cluster with Anthos Service Mesh and Demo application
       btn: Deploy GKE + ASM + Demo App
-      name: hub-anthos-with-demo-app
+      name: gke-anthos-with-demo-app
     - title: Just GKE cluster
       btn: Deploy empty GKE cluster
-      name: hub-just-gke
+      name: gke-empty-cluster
     - title: Web Server VM with SQL Server
       btn: Deploy Web Server VM + Cloud SQL
-      name: hub-php-web-server
+      name: vm-php-web-server
     - title: Cloud SQL instance with k6.io load test
       btn: Deploy Cloud SQL + Load Test
-      name: hub-cloud-sql-perftest
+      name: cloud-sql-perftest
     - title: Cloud Composer with a sample ETL pipeline to move data from Cloud Storage to BigQuery
       btn: Deploy Composer + BigQuery
-      name: hub-composer-demo-app
+      name: composer-demo-app

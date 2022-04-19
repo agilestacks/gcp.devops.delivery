@@ -4,7 +4,7 @@ weight: 10
 ---
 # GKE Sandbox
 
-{{< sandbox-btn sandboxName="hub-just-gke" >}}
+{{< sandbox-btn sandboxName="gke-empty-cluster" >}}
 
 ## Description
 

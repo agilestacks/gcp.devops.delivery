@@ -4,7 +4,7 @@ weight: 30
 ---
 # GKE Sandbox
 
-{{< sandbox-btn sandboxName="hub-anthos-with-demo-app" >}}
+{{< sandbox-btn sandboxName="gke-anthos-with-demo-app" >}}
 
 ## Description
 

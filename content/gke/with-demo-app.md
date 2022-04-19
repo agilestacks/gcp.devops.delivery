@@ -4,7 +4,7 @@ weight: 20
 ---
 # GKE Sandbox
 
-{{< sandbox-btn sandboxName="hub-gke-with-demo-app" >}}
+{{< sandbox-btn sandboxName="gke-with-demo-app" >}}
 
 ## Description
 

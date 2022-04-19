@@ -4,7 +4,7 @@ weight: 20
 ---
 # Cloud SQL with Load Test
 
-{{< sandbox-btn sandboxName="hub-cloud-sql-perftest" >}}
+{{< sandbox-btn sandboxName="cloud-sql-perftest" >}}
 
 ## Description
 

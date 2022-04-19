@@ -6,8 +6,9 @@
 {{ $url := printf "%s?cloudshell_git_repo=%s&" $url $sandboxesGitUrl }}
 {{ $url := printf "%s&cloudshell_git_branch=%s" $url $sandboxesGitBranch }}
 {{ $url := printf "%s&cloudshell_image=%s" $url $image }}
-{{ $url := printf "%s&cloudshell_tutorial=%s.md" $url $sandboxName }}
-{{ $url := printf "%s&cloudshell_open_in_editor=%s.yaml" $url $sandboxName }}
+{{ $url := printf "%s&cloudshell_tutorial=README.md" $url }}
+{{ $url := printf "%s&cloudshell_open_in_editor=hub.yaml" $url }}
+{{ $url := printf "%s&cloudshell_workspace=%s" $url $sandboxName }}
 
 <a href="{{ $url }}" target="_blank" rel="noopener" class="book-btn">
     Deploy with CloudShell

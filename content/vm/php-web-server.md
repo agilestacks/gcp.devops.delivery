@@ -4,7 +4,7 @@ weight: 10
 ---
 # Web Server Sandbox Stack
 
-{{< sandbox-btn sandboxName="hub-php-web-server" >}}
+{{< sandbox-btn sandboxName="vm-php-web-server" >}}
 
 ## Description
 
