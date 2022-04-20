@@ -19,7 +19,7 @@ Sign in to your [GCP] account using [Google Cloud Platform web console](https://
 Install supported sandboxes using the following commands:
 
 ```shell
-hub stack init -f hub-<sandbox-name>.yaml
+hub stack init
 hub stack deploy
 ```
 
