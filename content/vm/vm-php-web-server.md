@@ -1,23 +1,23 @@
 ---
-title: With Demo App
-weight: 20
+title: Web Server + PHP + Cloud SQL
+weight: 10
 ---
-# GKE Sandbox
-
-{{< sandbox-btn sandboxName="gke-with-demo-app" >}}
+# Web Server Sandbox Stack
 
 ## Description
 
-GKE Sandbox with ingress controller and demo application
+Web Server Sandbox stack with VM, private VPC, load balancer, private Cloud SQL
 
-{{< img "/images/gke-without-anthos.png" "400" />}}
+List of the components used in this stack:
 
-List of the components used in this sandbox:
-
-* [`GKE Cluster`](https://github.com/agilestacks/google-components/tree/main/gke-gcloud)
-* [`Nginx - ingress controller`](https://github.com/agilestacks/google-components/tree/main/nginx)
-* [`External DNS - dns record provisioner`](https://github.com/agilestacks/google-components/tree/main/external-dns)
-* [`Online Boutique - Demo APP`](https://github.com/agilestacks/google-components/tree/main/online-boutique-app)
+* [`SSL Certificate`](https://github.com/agilestacks/google-components/tree/main/acme-certificate)
+* [`VPC Network`](https://github.com/agilestacks/google-components/tree/main/network)
+* [`Cloud SQL`](https://github.com/agilestacks/google-components/tree/main/cloud-sql)
+* [`Cloud NAT`](https://github.com/agilestacks/google-components/tree/main/cloud-nat)
+* [`Managed Instance Group`](https://github.com/agilestacks/google-components/tree/main/managed-instance-group)
+* [`Load balancing`](https://github.com/agilestacks/google-components/tree/main/load-balancer)
+* [`DNS Zone Record`](https://github.com/agilestacks/google-components/tree/main/dns-zone-record-set)
+* [`Load generator`](https://github.com/agilestacks/google-components/tree/main/wp-loadgenerator)
 
 ## Setup
 
@@ -118,4 +118,4 @@ hub stack init [id]
 
 ## Architecture Diagram
 
-![GKE Sandbox Architecture](/images/gke_nginx_diagram.png)
+![Web Server VM Architecture](/images/web_server_diagram.png)

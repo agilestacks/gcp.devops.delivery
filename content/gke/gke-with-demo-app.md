@@ -1,24 +1,20 @@
 ---
-title: ASM with Demo App
-weight: 30
+title: With Demo App
+weight: 20
 ---
 # GKE Sandbox
 
-{{< sandbox-btn sandboxName="gke-anthos-with-demo-app" >}}
-
 ## Description
 
-GKE Sandbox with Anthos Service Mesh, ingress controller, and demo application.
+GKE Sandbox with ingress controller and demo application
 
-{{< img "/images/gke-with-anthos.png" "400" />}}
+{{< img "/images/gke-without-anthos.png" "400" />}}
 
 List of the components used in this sandbox:
 
 * [`GKE Cluster`](https://github.com/agilestacks/google-components/tree/main/gke-gcloud)
-* [`GKE Node Pool`](https://github.com/agilestacks/google-components/tree/main/gke-gcloud-node-pool)
-* [`Anthos Service Mesh`](https://github.com/agilestacks/google-components/tree/main/anthos-service-mesh)
-* [`Anthos Ingress Gateway`](https://github.com/agilestacks/google-components/tree/main/anthos-ingress-gateway)
-* [`DNS Zone Record`](https://github.com/agilestacks/google-components/tree/main/dns-zone-record-set)
+* [`Nginx - ingress controller`](https://github.com/agilestacks/google-components/tree/main/nginx)
+* [`External DNS - dns record provisioner`](https://github.com/agilestacks/google-components/tree/main/external-dns)
 * [`Online Boutique - Demo APP`](https://github.com/agilestacks/google-components/tree/main/online-boutique-app)
 
 ## Setup
@@ -58,7 +54,7 @@ This is done during `configure` command.
 
 ## Deploy/Undeploy
 
-Once you are done with the configuration, use the following command to deploy a sandbox:
+Once you are done with the configuration, use the following command to deploy the sandbox:
 
 ```bash
 hub stack deploy
@@ -79,7 +75,7 @@ hub stack undeploy -c <name-of-the-component>
 If any of the sandbox components would require additional configuration parameters,
 users will be asked to provide them.
 
-To delete the sandbox, run the followng command:
+To delete the sandbox run this command:
 
 ```bash
 hub stack undeploy
@@ -120,4 +116,4 @@ hub stack init [id]
 
 ## Architecture Diagram
 
-![GKE Sandbox Architecture](/images/gke_asm_diagram.png)
+![GKE Sandbox Architecture](/images/gke_nginx_diagram.png)

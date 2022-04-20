@@ -1,18 +1,18 @@
 ---
-title: Empty GKE
-weight: 10
+title: With Load Test
+weight: 20
 ---
-# GKE Sandbox
-
-{{< sandbox-btn sandboxName="gke-empty-cluster" >}}
+# Cloud SQL with Perfomance Test
 
 ## Description
 
-Just Google Kubernetes Engine cluster
+[Cloud SQL](https://cloud.google.com/sql) with Load Test example
 
 List of the components used in this sandbox:
 
-* [`GKE Cluster`](https://github.com/agilestacks/google-components/tree/main/gke-gcloud)
+* [`VPC Network`](https://github.com/agilestacks/google-components/tree/main/network)
+* [`Cloud SQL`](https://github.com/agilestacks/google-components/tree/main/cloud-sql)
+* [`K6 Example SQL Performance Test`](https://github.com/agilestacks/google-components/tree/main/k6-sql-load-test)
 
 ## Setup
 
@@ -57,22 +57,19 @@ Once you are done with the configuration, use the following command to deploy th
 hub stack deploy
 ```
 
-To deploy a specific component on the sandbox:
+To re-run the load test:
 
 ```bash
-hub stack deploy -c <name-of-the-component>
+hub stack deploy -c k6-sql-load-test
 ```
 
-To undeploy a specific component on the sandbox:
-
-```bash
-hub stack undeploy -c <name-of-the-component>
-```
+Feel free to adjust parameter values in `hub.yaml` such as`component.k6SQLloadTest.testDuration`
+or `component.k6SQLloadTest.numberOfUsers` to change test behaviour.
 
 If any of the sandbox components would require additional configuration parameters,
 users will be asked to provide them.
 
-To delete the sandbox run this command:
+To delete the sandbox, run the followng command:
 
 ```bash
 hub stack undeploy
@@ -110,5 +107,9 @@ hub stack init [id]
 ```
 
 [Hub CLI] will find location of state file, download it and prepare configuration files.
+
+## Architecture Diagram
+
+![Cloud SQL Sandbox Architecture](/images/cloud_sql_diagram.png)
 
 [Hub CLI]: https://superhub.io

@@ -1,12 +1,8 @@
 ---
-title: With Demo App
-weight: 10
+title: Just Composer
+weight: 20
 ---
 # Cloud Composer
-
-{{< sandbox-btn sandboxName="composer-demo-app" >}}
-
-## Description
 
 This sandbox will deploy a [Cloud Composer](https://cloud.google.com/composer)
 
@@ -14,11 +10,8 @@ List of the components used in this sandbox:
 
 * [`Network`](https://github.com/agilestacks/google-components/tree/main/gke-gcloud)
 * [`Cloud Composer Environment`](https://github.com/agilestacks/google-components/tree/main/composer-environment)
-* [`Dataflow Pipeline Example`](https://github.com/agilestacks/google-components/tree/main/dataflow-example)
-* [`Cloud Storage Bucket`](https://github.com/agilestacks/google-components/tree/main/dataflow-example)
-* [`BigQuery Table`](https://github.com/agilestacks/google-components/tree/main/dataflow-example)
 
-> Note: additional details are available in [Cloud Composer Guide]
+> Note: additional how-to information is available in [Cloud Composer Guide](https://cloud.google.com/composer/docs/how-to)
 
 ## Setup
 
@@ -92,6 +85,15 @@ Please explore `parameters` section of the `hub.yaml` to see what parameters are
 Any default value can be overridden.
 To get more information on how components are implemented refer to their README files.
 
+| Name      | Description | Default Value |
+| :-------- | :--------   | :-------- |
+| `gke.nodeCount` | Number of GKE nodes for compose environment. Must be at least `3` | `3` |
+| `gke.machineType` | Number of GKE nodes for compose environment | `n1-standard-1` |
+| `composer.version` | Version of composer (`v1` or `v2`) when `v2` | `v1` |
+| `component.network.subnetworkCidr` | Target environment subnet address range | `10.127.0.0/20` |
+
+You can read about configuration options here: <https://cloud.google.com/composer/docs/how-to/managing/creating>
+
 ## Recover
 
 Google Cloud Shell environments are ephemeral, which means any files stored locally
@@ -150,27 +152,7 @@ k cluster-info
 
 > TODO: we may want to delegate this to the `composer` component `post-deploy`. Depends if we bother to deploy on top anything else, (i.e. Ingress Controller, user apps etc as set of components)
 
-## Additional Parameters
-
-Additional parameters can be modified in `hub-composer-demo-app.yaml` file
-
-| Name      | Description | Default Value |
-| :-------- | :--------   | :-------- |
-| `gke.nodeCount` | Number of GKE nodes for compose environment. Must be at least `3` | `3` |
-| `gke.machineType` | Number of GKE nodes for compose environment | `n1-standard-1` |
-| `composer.version` | Version of composer (`v1` or `v2`) when `v2` | `v1` |
-| `component.network.subnetworkCidr` | Target environment subnet address range | `10.127.0.0/20` |
-
-You can read about configuration options here: <https://cloud.google.com/composer/docs/how-to/managing/creating>
-
 ## See also
 
-* [Cloud Composer Guide]
+* [Cloud Composer Guide](https://cloud.google.com/composer/docs/how-to)
 * [Creating Environment](https://cloud.google.com/composer/docs/how-to/managing/creating)
-
-## Architecture Diagram
-
-![Composer Sandbox Architecture](/images/composer_diagram.png)
-
-[Hub CLI]: https://superhub.io
-[Cloud Composer Guide]: https://cloud.google.com/composer/docs/how-to

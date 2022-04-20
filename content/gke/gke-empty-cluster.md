@@ -1,25 +1,16 @@
 ---
-title: Web Server + PHP + Cloud SQL
+title: Empty GKE
 weight: 10
 ---
-# Web Server Sandbox Stack
-
-{{< sandbox-btn sandboxName="vm-php-web-server" >}}
+# GKE Sandbox
 
 ## Description
 
-Web Server Sandbox stack with VM, private VPC, load balancer, private Cloud SQL
+Just Google Kubernetes Engine cluster
 
-List of the components used in this stack:
+List of the components used in this sandbox:
 
-* [`SSL Certificate`](https://github.com/agilestacks/google-components/tree/main/acme-certificate)
-* [`VPC Network`](https://github.com/agilestacks/google-components/tree/main/network)
-* [`Cloud SQL`](https://github.com/agilestacks/google-components/tree/main/cloud-sql)
-* [`Cloud NAT`](https://github.com/agilestacks/google-components/tree/main/cloud-nat)
-* [`Managed Instance Group`](https://github.com/agilestacks/google-components/tree/main/managed-instance-group)
-* [`Load balancing`](https://github.com/agilestacks/google-components/tree/main/load-balancer)
-* [`DNS Zone Record`](https://github.com/agilestacks/google-components/tree/main/dns-zone-record-set)
-* [`Load generator`](https://github.com/agilestacks/google-components/tree/main/wp-loadgenerator)
+* [`GKE Cluster`](https://github.com/agilestacks/google-components/tree/main/gke-gcloud)
 
 ## Setup
 
@@ -118,6 +109,4 @@ hub stack init [id]
 
 [Hub CLI] will find location of state file, download it and prepare configuration files.
 
-## Architecture Diagram
-
-![Web Server VM Architecture](/images/web_server_diagram.png)
+[Hub CLI]: https://superhub.io

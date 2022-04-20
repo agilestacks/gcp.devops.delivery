@@ -1,0 +1,7 @@
+<h{{ .Level }} id="{{ .Anchor | safeURL }}">
+  {{ .Text | safeHTML }}
+  <a class="anchor" href="#{{ .Anchor | safeURL }}">#</a>
+</h{{ .Level }}>
+{{ if eq .Level 1 }}
+  {{ partial "sandbox-btn.html" . }}
+{{ end }}

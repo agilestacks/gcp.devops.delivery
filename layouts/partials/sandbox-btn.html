@@ -1,0 +1,15 @@
+{{ $sandboxName := .Page.File.BaseFileName }}
+{{ $sandboxesGitUrl := .Page.Site.Params.sandboxesGit.url }}
+{{ $sandboxesGitBranch := .Page.Site.Params.sandboxesGit.branch }}
+{{ $image := .Page.Site.Params.cloudShell.image }}
+{{ $url := .Page.Site.Params.cloudShell.url }}
+{{ $url := printf "%s?cloudshell_git_repo=%s&" $url $sandboxesGitUrl }}
+{{ $url := printf "%s&cloudshell_git_branch=%s" $url $sandboxesGitBranch }}
+{{ $url := printf "%s&cloudshell_image=%s" $url $image }}
+{{ $url := printf "%s&cloudshell_tutorial=README.md" $url }}
+{{ $url := printf "%s&cloudshell_open_in_editor=hub.yaml" $url }}
+{{ $url := printf "%s&cloudshell_workspace=%s" $url $sandboxName }}
+
+<a href="{{ $url }}" target="_blank" rel="noopener" class="book-btn">
+    Deploy with CloudShell
+</a>

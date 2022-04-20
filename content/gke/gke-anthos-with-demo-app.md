@@ -1,20 +1,23 @@
 ---
-title: With Load Test
-weight: 20
+title: ASM with Demo App
+weight: 30
 ---
-# Cloud SQL with Perfomance Test
-
-{{< sandbox-btn sandboxName="cloud-sql-perftest" >}}
+# GKE Sandbox
 
 ## Description
 
-[Cloud SQL](https://cloud.google.com/sql) with Load Test example
+GKE Sandbox with Anthos Service Mesh, ingress controller, and demo application.
+
+{{< img "/images/gke-with-anthos.png" "400" />}}
 
 List of the components used in this sandbox:
 
-* [`VPC Network`](https://github.com/agilestacks/google-components/tree/main/network)
-* [`Cloud SQL`](https://github.com/agilestacks/google-components/tree/main/cloud-sql)
-* [`K6 Example SQL Performance Test`](https://github.com/agilestacks/google-components/tree/main/k6-sql-load-test)
+* [`GKE Cluster`](https://github.com/agilestacks/google-components/tree/main/gke-gcloud)
+* [`GKE Node Pool`](https://github.com/agilestacks/google-components/tree/main/gke-gcloud-node-pool)
+* [`Anthos Service Mesh`](https://github.com/agilestacks/google-components/tree/main/anthos-service-mesh)
+* [`Anthos Ingress Gateway`](https://github.com/agilestacks/google-components/tree/main/anthos-ingress-gateway)
+* [`DNS Zone Record`](https://github.com/agilestacks/google-components/tree/main/dns-zone-record-set)
+* [`Online Boutique - Demo APP`](https://github.com/agilestacks/google-components/tree/main/online-boutique-app)
 
 ## Setup
 
@@ -53,20 +56,23 @@ This is done during `configure` command.
 
 ## Deploy/Undeploy
 
-Once you are done with the configuration, use the following command to deploy the sandbox:
+Once you are done with the configuration, use the following command to deploy a sandbox:
 
 ```bash
 hub stack deploy
 ```
 
-To re-run the load test:
+To deploy a specific component on the sandbox:
 
 ```bash
-hub stack deploy -c k6-sql-load-test
+hub stack deploy -c <name-of-the-component>
 ```
 
-Feel free to adjust parameter values in `hub.yaml` such as`component.k6SQLloadTest.testDuration`
-or `component.k6SQLloadTest.numberOfUsers` to change test behaviour.
+To undeploy a specific component on the sandbox:
+
+```bash
+hub stack undeploy -c <name-of-the-component>
+```
 
 If any of the sandbox components would require additional configuration parameters,
 users will be asked to provide them.
@@ -112,6 +118,4 @@ hub stack init [id]
 
 ## Architecture Diagram
 
-![Cloud SQL Sandbox Architecture](/images/cloud_sql_diagram.png)
-
-[Hub CLI]: https://superhub.io
+![GKE Sandbox Architecture](/images/gke_asm_diagram.png)
