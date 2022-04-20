@@ -6,6 +6,8 @@ weight: 10
 
 {{< sandbox-btn sandboxName="composer-demo-app" >}}
 
+## Description
+
 This sandbox will deploy a [Cloud Composer](https://cloud.google.com/composer)
 
 List of the components used in this sandbox:
@@ -16,74 +18,103 @@ List of the components used in this sandbox:
 * [`Cloud Storage Bucket`](https://github.com/agilestacks/google-components/tree/main/dataflow-example)
 * [`BigQuery Table`](https://github.com/agilestacks/google-components/tree/main/dataflow-example)
 
-> Note: additional details are available in [Cloud Composer Guide](https://cloud.google.com/composer/docs/how-to)
+> Note: additional details are available in [Cloud Composer Guide]
 
-## Configuration
+## Setup
 
-Before you can deploy the sandbox please run the initialization command pointing to the `hub` manifest file:
+First you need initialize the sandbox configuration.
+To do this please run the initialization command:
 
-```shell
-hub stack init -f hub-composer-demo-app.yaml
+```bash
+hub stack init
 ```
 
-The command will prompt you to enter the ID of your GCP project.
+The command will prompt you to enter the `GCP project ID` and
+will create initial configuration files and download required components.
 
-Next, please run the following command to configure the environment. You will be prompted for Composer version - use values `v1` or `v2`.
+By default command enable auto configure of sandbox during `deploy` or `undeploy`.
 
-```shell
+### Advance case
+
+For some advanced cases you need to configure sandbox manually.
+To do this just pass `--disable-auto-configure` flag:
+
+```bash
+hub stack init --disable-auto-configure
+```
+
+And after that to configure sandbox manually run command:
+
+```bash
 hub stack configure
 ```
 
-### How to recover the configuration of an existing sandbox?
-
-Google Cloud Shell environments are ephemeral,
-which means any files stored locally on the Cloud Shell machine will be lost when
-the machine restarts.
-Luckily, we store sandbox state files in the Cloud,
-which means, if we lose a local state, we can always recover it from the Cloud.
-
-Execute the following commands to recover a state of a sandbox:
-
-```shell
-hub stack init -f hub-composer-demo-app.yaml -s {GCS path to a state file of the sanbox}
-hub stack configure
-```
-
-Please browse GCS buckets in your project to find the right one by the convention below:
-
-GCS path naming convention:
-
-*gs://{sandbox state bucket}/{stack dns name}/hub/hub.state*
-
-Example:
-
-*gs://superhub-superhub/overconfident-corvo-216.epam.devops.delivery/hub/hub.state*
-
-After state is recovered, you can undeploy or update your sandbox.
+The [Hub CLI] produces a state file after provisioning of sandbox,
+same as its components, and it must be uploaded to the cloud.
+For simplicity, we pre-create `Cloud DNS Zone` and `GCS bucket`
+in your GCP project with pre-generated names.
+This is done during `configure` command.
 
 ## Deployment
 
-Once you are done with the configuration, use the following command to deploy a sandbox
+Once you are done with the configuration, use the following command to deploy the sandbox:
 
-```shell
+```bash
 hub stack deploy
 ```
 
-If you want to change environemnt configuration and redeploy a composer environment run following command
+If you want to change environemnt configuration and redeploy a composer environment run following command:
 
-```shell
+```bash
 hub stack undeploy -c "composer"
-# make a change  now in the configuration or in the body of the component
+```
+
+Make a change in the sandbox configuration or in the body of the component and run next command:
+
+```bash
 hub stack deploy -c "composer"
 ```
 
-> Note: ieven in minimal configuration it will still take 20+ minutes to redeploy
+> Note: even in minimal configuration it will still take 20+ minutes to redeploy
 
 To delete the sandbox, run the followng command:
 
-```shell
+```bash
 hub stack undeploy
 ```
+
+### Parameters
+
+Each `component` has a set of parameters (key-value pairs) such as
+GKE cluster name or number of nodes in a node pool, etc.
+
+Please explore `parameters` section of the `hub.yaml` to see what parameters are available.
+Any default value can be overridden.
+To get more information on how components are implemented refer to their README files.
+
+## Recover
+
+Google Cloud Shell environments are ephemeral, which means any files stored locally
+on the Cloud Shell machine will be lost when the machine restarts.
+Luckily, we store sandbox state files in the Cloud, which means,
+if we lose a local state, we can always recover it from the Cloud.
+
+In order to recover your sandbox first you need to find ID of sandbox
+in the list of sandboxes in your GCP project.
+
+To do this run next command:
+
+```bash
+hub state ls
+```
+
+Next step will be initializations of your target sandbox:
+
+```bash
+hub stack init [id]
+```
+
+[Hub CLI] will find location of state file, download it and prepare configuration files.
 
 ## Getting deployment result
 
@@ -101,7 +132,7 @@ hub show
 
 If you want to see only the configuration parameters used by Composer run the following command
 
-```shell
+```bash
 hub show -c "composer"
 ```
 
@@ -117,7 +148,7 @@ gcloud container clusters get-credentials "$cluster_name"
 k cluster-info
 ```
 
-TODO: we may want to delegate this to the `composer` component `post-deploy`. Depends if we bother to deploy on top anything else, (i.e. Ingress Controller, user apps etc as set of components)
+> TODO: we may want to delegate this to the `composer` component `post-deploy`. Depends if we bother to deploy on top anything else, (i.e. Ingress Controller, user apps etc as set of components)
 
 ## Additional Parameters
 
@@ -134,9 +165,12 @@ You can read about configuration options here: <https://cloud.google.com/compose
 
 ## See also
 
-* [Cloud Composer Guide](https://cloud.google.com/composer/docs/how-to)
+* [Cloud Composer Guide]
 * [Creating Environment](https://cloud.google.com/composer/docs/how-to/managing/creating)
 
 ## Architecture Diagram
 
 ![Composer Sandbox Architecture](/images/composer_diagram.png)
+
+[Hub CLI]: https://superhub.io
+[Cloud Composer Guide]: https://cloud.google.com/composer/docs/how-to
