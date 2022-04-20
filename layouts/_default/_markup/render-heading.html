@@ -2,6 +2,6 @@
   {{ .Text | safeHTML }}
   <a class="anchor" href="#{{ .Anchor | safeURL }}">#</a>
 </h{{ .Level }}>
-{{ if eq .Level 1 }}
+{{ if (and (eq .Level 1) (ne .Page.File.BaseFileName "_index")) }}
   {{ partial "sandbox-btn.html" . }}
 {{ end }}
