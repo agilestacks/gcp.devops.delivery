@@ -1,6 +1,6 @@
 {
-  "name": "GCP Support Sandboxes",
-  "short_name": "GCP Support Sandboxes",
+  "name": "GCP Sandboxes",
+  "short_name": "GCP Sandboxes",
   "start_url": "/",
   "scope": "/",
   "display": "standalone",
