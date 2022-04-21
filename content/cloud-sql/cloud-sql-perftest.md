@@ -110,6 +110,6 @@ hub stack init <id>
 
 ## Architecture Diagram
 
-![Cloud SQL Sandbox Architecture](/images/cloud_sql_diagram.png)
+![Cloud SQL Sandbox Architecture](https://google.devops.delivery/images/cloud_sql_diagram.png)
 
 [Hub CLI]: https://superhub.io

@@ -8,7 +8,7 @@ weight: 30
 
 GKE Sandbox with Anthos Service Mesh, ingress controller, and demo application.
 
-![Schema](/images/gke-with-anthos.png)
+![Schema](https://google.devops.delivery/images/gke-with-anthos.png)
 
 List of the components used in this sandbox:
 
@@ -118,7 +118,7 @@ hub stack init <id>
 
 ## Architecture Diagram
 
-![GKE Sandbox Architecture](/images/gke_asm_diagram.png)
+![GKE Sandbox Architecture](https://google.devops.delivery/images/gke_asm_diagram.png)
 
 ## See also
 

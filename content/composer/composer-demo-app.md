@@ -164,7 +164,7 @@ k cluster-info
 
 ## Architecture Diagram
 
-![Composer Sandbox Architecture](/images/composer_diagram.png)
+![Composer Sandbox Architecture](https://google.devops.delivery/images/composer_diagram.png)
 
 [Hub CLI]: https://superhub.io
 [Cloud Composer Guide]: https://cloud.google.com/composer/docs/how-to

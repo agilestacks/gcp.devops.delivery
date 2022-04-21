@@ -118,4 +118,4 @@ hub stack init <id>
 
 ## Architecture Diagram
 
-![Web Server VM Architecture](/images/web_server_diagram.png)
+![Web Server VM Architecture](https://google.devops.delivery/images/web_server_diagram.png)

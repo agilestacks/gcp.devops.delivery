@@ -8,7 +8,7 @@ weight: 20
 
 GKE Sandbox with ingress controller and demo application
 
-{{< img "/images/gke-without-anthos.png" "400" />}}
+![Schema](https://google.devops.delivery/images/gke-without-anthos.png)
 
 List of the components used in this sandbox:
 
@@ -116,7 +116,7 @@ hub stack init <id>
 
 ## Architecture Diagram
 
-![GKE Sandbox Architecture](/images/gke_nginx_diagram.png)
+![GKE Sandbox Architecture](https://google.devops.delivery/images/gke_nginx_diagram.png)
 
 ## See also
 
