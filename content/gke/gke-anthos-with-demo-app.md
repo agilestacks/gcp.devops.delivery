@@ -8,7 +8,7 @@ weight: 30
 
 GKE Sandbox with Anthos Service Mesh, ingress controller, and demo application.
 
-{{< img "/images/gke-with-anthos.png" "400" />}}
+![Schema](/images/gke-with-anthos.png)
 
 List of the components used in this sandbox:
 
@@ -111,7 +111,7 @@ hub state ls
 Next step will be initializations of your target sandbox:
 
 ```bash
-hub stack init [id]
+hub stack init <id>
 ```
 
 [Hub CLI] will find location of state file, download it and prepare configuration files.
@@ -119,3 +119,7 @@ hub stack init [id]
 ## Architecture Diagram
 
 ![GKE Sandbox Architecture](/images/gke_asm_diagram.png)
+
+## See also
+
+* [Demo App Source Code and Documentation](https://github.com/GoogleCloudPlatform/microservices-demo/)

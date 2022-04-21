@@ -111,7 +111,7 @@ hub state ls
 Next step will be initializations of your target sandbox:
 
 ```bash
-hub stack init [id]
+hub stack init <id>
 ```
 
 [Hub CLI] will find location of state file, download it and prepare configuration files.

@@ -109,7 +109,7 @@ hub state ls
 Next step will be initializations of your target sandbox:
 
 ```bash
-hub stack init [id]
+hub stack init <id>
 ```
 
 [Hub CLI] will find location of state file, download it and prepare configuration files.
@@ -117,3 +117,7 @@ hub stack init [id]
 ## Architecture Diagram
 
 ![GKE Sandbox Architecture](/images/gke_nginx_diagram.png)
+
+## See also
+
+* [Demo App Source Code and Documentation](https://github.com/GoogleCloudPlatform/microservices-demo/)

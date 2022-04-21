@@ -1,14 +1,17 @@
 baseURL: http://google.devops.delivery/
 languageCode: en-us
-title: GCP Support Sandboxes
+title: GCP Sandboxes
 
 # https://themes.gohugo.io/themes/hugo-book/
 theme: hugo-book
 
 menu:
   after:
-    - name: "Github"
+    - name: "Sandboxes on GitHub"
       url: "https://github.com/agilestacks/google-stacks"
+      weight: 10
+    - name: "Components on GitHub"
+      url: "https://github.com/agilestacks/google-components"
       weight: 20
 
 params:
