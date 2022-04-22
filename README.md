@@ -1,5 +1,7 @@
 # This project is build for google.devops.delivery website
 
+[![GitHub Pages](https://github.com/agilestacks/google.devops.delivery/actions/workflows/gh-pages.yml/badge.svg)](https://github.com/agilestacks/google.devops.delivery/actions/workflows/gh-pages.yml) [![pages-build-deployment](https://github.com/agilestacks/google.devops.delivery/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/agilestacks/google.devops.delivery/actions/workflows/pages/pages-build-deployment) [![Sync Sandboxes README](https://github.com/agilestacks/google.devops.delivery/actions/workflows/sync-docs.yml/badge.svg)](https://github.com/agilestacks/google.devops.delivery/actions/workflows/sync-docs.yml)
+
 This website is based on [hugo](https://gohugo.io/) framework for building websites. Also using next assets:
 
 - [hugo-book](https://github.com/alex-shpak/hugo-book) as theme.
