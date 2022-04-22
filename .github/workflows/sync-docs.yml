@@ -25,6 +25,7 @@ jobs:
         with:
           repository: agilestacks/google-stacks
           path: sandboxes
+          token: ${{ secrets.GH_PRIVATE_ACCESS_TOKEN }}
 
       - name: "Update README files"
         run: |
