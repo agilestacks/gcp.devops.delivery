@@ -41,7 +41,7 @@ jobs:
         run: |
           echo "::set-output name=git_sha::$(echo $GITHUB_SHA | cut -c-7)"
           echo "::set-output name=user_name::${{ github.event.head_commit.author.name || github.actor }}"
-          echo "::set-output name=user_email::${{ format('{0}', github.event.head_commit.author.email || join([github.actor, '@users.noreply.github.com'], '')) }}"
+          echo "::set-output name=user_email::${{ github.event.head_commit.author.email || format('{0}@users.noreply.github.com', github.actor) }}"
 
       - name: "Push updates"
         run: |
