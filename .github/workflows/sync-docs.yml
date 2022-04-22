@@ -1,0 +1,45 @@
+name: Sync Sandboxes README
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "content/**.md"
+      - "!content/**index.md"
+
+jobs:
+  sync:
+    runs-on: ubuntu-20.04
+    concurrency:
+      group: ${{ github.workflow }}-${{ github.ref }}-sync
+    steps:
+      - name: "Checkout This repo"
+        uses: actions/checkout@v3
+        with:
+          path: main
+
+      - name: "Checkout Sandboxes repo"
+        uses: actions/checkout@v3
+        with:
+          repository: agilestacks/google-stacks
+          path: sandboxes
+
+      - name: "Update README files"
+        run: |
+          find main/content -type f -name '*.md' ! -name '*index.md' -exec sh -c '
+            filename=$(basename "$1")
+            readme="sandboxes/${filename%.md}"
+            mkdir -p "$readme"
+            cp -r "$1" "$readme/README.md"
+            sed -i -e "/^---$/,/^---$/d" "$readme/README.md"
+          ' sh {} \;
+
+      - name: "Push updates"
+        run: |
+          cd ./sandboxes
+          git config user.name ${{ github.event.head_commit.author.name }}
+          git confgi user.email ${{ github.event.head_commit.author.email }}
+          git add .
+          git commit -m "Update READMEs ${{ github.repository }}@${{ github.sha }}"
+          git push
