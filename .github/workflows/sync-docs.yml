@@ -38,9 +38,8 @@ jobs:
 
       - name: "Push updates"
         run: |
-          cd ./sandboxes
           git config user.name ${{ github.event.head_commit.author.name }}
           git config user.email ${{ github.event.head_commit.author.email }}
-          git add .
-          git commit -m "Update READMEs ${{ github.repository }}@${{ github.sha }}"
-          git push
+          git -C sandboxes add .
+          git -C sandboxes commit -m "Update READMEs ${{ github.repository }}@${{ github.sha }}"
+          git -C sandboxes push
