@@ -1,6 +1,7 @@
 name: Sync Sandboxes README
 
 on:
+  workflow_dispatch: {}
   push:
     branches:
       - main
