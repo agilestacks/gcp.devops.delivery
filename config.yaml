@@ -17,7 +17,6 @@ menu:
 params:
   BookSection: "*"
   BookToC: false
-  # BookMenuBundle: "/menu"
 
   cloudShell:
     url: https://ssh.cloud.google.com/cloudshell/editor
