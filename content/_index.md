@@ -1,6 +1,6 @@
 # GCP Sandboxes
 
-[SuperHub] is an open source tool that helps cloud practitioners to automate deployments of [GCP] sandbox environemnts. It offers:
+[SuperHub] is an open source tool that helps cloud practitioners to automate deployments of [GCP] sandbox environments. It offers:
 
 - **Sandbox Templates** - Several supported sandboxes built on cloud native stack:
   - [GKE]
