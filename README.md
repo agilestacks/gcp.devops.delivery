@@ -4,7 +4,7 @@
 
 This website is based on [hugo](https://gohugo.io/) framework for building websites. Also using next assets:
 
-- [hugo-book](https://github.com/alex-shpak/hugo-book) as theme.
+- [hugo-book] as theme.
 
 ## Prepare
 
@@ -16,7 +16,7 @@ brew install hugo
 
 For more details visit official hugo [site](https://gohugo.io/getting-started/installing/)
 
-To get `hugo-book` theme just run
+To get [hugo-book] theme just run
 
 ```shell
 git submodule update --init
@@ -33,3 +33,5 @@ hugo server --minify --theme hugo-book
 ## Build and publish to github pages
 
 This is done via GitHub Actions.
+
+[hugo-book]: https://github.com/alex-shpak/hugo-book
