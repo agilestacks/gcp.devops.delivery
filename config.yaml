@@ -26,6 +26,10 @@ params:
     url: https://github.com/agilestacks/google-stacks
     branch: main
 
+  ignoredBaseFileNames:
+    - _index
+    - contributing
+
   sandboxes:
     - title: GKE cluster with Demo application
       btn: Deploy GKE + Demo App

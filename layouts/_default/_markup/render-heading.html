@@ -1,7 +1,9 @@
+{{ $ignoredBaseFileNames := .Page.Site.Params.ignoredBaseFileNames }}
+
 <h{{ .Level }} id="{{ .Anchor | safeURL }}">
   {{ .Text | safeHTML }}
   <a class="anchor" href="#{{ .Anchor | safeURL }}">#</a>
 </h{{ .Level }}>
-{{ if (and (eq .Level 1) (ne .Page.File.BaseFileName "_index")) }}
+{{ if (and (eq .Level 1) (not (in $ignoredBaseFileNames .Page.File.BaseFileName))) }}
   {{ partial "sandbox-btn.html" . }}
 {{ end }}
